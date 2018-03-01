@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatApp</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'partials/navbar' %>
+	<div class="container">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %> alert-dismissable">
+			    <button type="button" class="close" data-dismiss="alert" aria-hidden="false">×</button>
+			    <%= value %>
+			</div>
+		<% end %>
+
+		<%= yield %>	
+	</div>
+	
+
+</body>
+</html>
+
+
